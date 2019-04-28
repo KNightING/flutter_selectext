@@ -161,7 +161,6 @@ class _TextSelectionToolbar extends StatelessWidget {
 
 /// Builds a themed [CupertinoButton] for the toolbar.
 CupertinoButton _buildToolbarColorButton(Color color, VoidCallback onPressed) {
-
   return CupertinoButton(
     child: Container(
       foregroundDecoration: ShapeDecoration(
@@ -170,8 +169,8 @@ CupertinoButton _buildToolbarColorButton(Color color, VoidCallback onPressed) {
           side: BorderSide(color: Colors.grey, width: 3.0),
         ),
       ),
-      height: _kToolbarHeight,
-      width: _kToolbarHeight,
+      height: _kToolbarHeight * .75,
+      width: _kToolbarHeight * .75,
     ),
     color: _kToolbarBackgroundColor,
     minSize: _kToolbarHeight,
