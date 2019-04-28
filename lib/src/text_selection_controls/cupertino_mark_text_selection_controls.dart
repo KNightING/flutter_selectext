@@ -64,7 +64,8 @@ class _TextSelectionToolbar extends StatelessWidget {
     Key key,
     this.handleCopy,
     this.handleSelectAll,
-    this.handleMark, this.markColor,
+    this.handleMark,
+    this.markColor,
   }) : super(key: key);
 
   final VoidCallback handleCopy;
@@ -81,16 +82,7 @@ class _TextSelectionToolbar extends StatelessWidget {
         CupertinoLocalizations.of(context);
 
     if (handleMark != null) {
-      items.add(Padding(
-        padding: EdgeInsets.all(1),
-        child: RawMaterialButton(
-          onPressed: handleMark,
-          shape: new CircleBorder(
-              side: BorderSide(color: Colors.grey, width: 3.0)),
-          elevation: 2.0,
-          fillColor: markColor,
-        ),
-      ));
+      items.add(_buildToolbarColorButton(markColor, handleMark));
     }
 
 //    if (handleCut != null) {
@@ -132,7 +124,9 @@ class _TextSelectionToolbar extends StatelessWidget {
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: _kToolbarDividerColor,
+
               borderRadius: _kToolbarBorderRadius,
+
               // Add a hairline border with the button color to avoid
               // antialiasing artifacts.
               border: Border.all(color: _kToolbarBackgroundColor, width: 0),
@@ -140,10 +134,12 @@ class _TextSelectionToolbar extends StatelessWidget {
             child: Row(mainAxisSize: MainAxisSize.min, children: items),
           ),
         ),
+
         // TODO(xster): Position the triangle based on the layout delegate, and
         // avoid letting the triangle line up with any dividers.
         // https://github.com/flutter/flutter/issues/11274
         triangle,
+
         const Padding(padding: EdgeInsets.only(bottom: 10.0)),
       ],
     );
@@ -161,6 +157,28 @@ class _TextSelectionToolbar extends StatelessWidget {
       onPressed: onPressed,
     );
   }
+}
+
+/// Builds a themed [CupertinoButton] for the toolbar.
+CupertinoButton _buildToolbarColorButton(Color color, VoidCallback onPressed) {
+  var ps = PhysicalShape(
+    color: color,
+    clipper: ShapeBorderClipper(
+      shape: CircleBorder(
+        side: BorderSide(color: Colors.grey, width: 3.0),
+      ),
+    ),
+  );
+
+  return CupertinoButton(
+    child: ps,
+    color: _kToolbarBackgroundColor,
+    minSize: _kToolbarHeight,
+    padding: _kToolbarButtonPadding,
+    borderRadius: null,
+    pressedOpacity: 0.7,
+    onPressed: onPressed,
+  );
 }
 
 /// Centers the toolbar around the given position, ensuring that it remains on
@@ -280,7 +298,7 @@ class CupertinoMarkTextSelectionControls
             handleMark: isTextSelection(delegate)
                 ? () => handleMark(_selection(delegate))
                 : null,
-            markColor:markColor,
+            markColor: markColor,
           ),
         ));
   }

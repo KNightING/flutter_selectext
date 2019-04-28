@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23731009-1c21-4107-aede-ae3f721dd7bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_copy_text_selection_controls.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_copy_text_selection_controls.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
@@ -33,15 +32,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-873">
@@ -53,11 +43,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+            <state relative-caret-position="250">
+              <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/flutter/packages/flutter/lib/src/painting/circle_border.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/flutter/packages/flutter/lib/src/painting/borders.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="277" column="15" selection-start-line="277" selection-start-column="15" selection-end-line="277" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/flutter/packages/flutter/lib/src/cupertino/button.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -67,22 +84,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2310">
               <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/selectable_text_selection_delegate.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-245" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/selectext_selection.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -102,15 +103,6 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/selectable_text_selection_controls.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1320">
-              <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -256,13 +248,13 @@
       <window_info id="Resources Explorer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32027027" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32027027" />
       <window_info anchor="bottom" id="Dart Analysis" weight="0.3298969" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Run" weight="0.32896653" />
       <window_info anchor="bottom" id="Debug" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32896653" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32896653" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.32896653" />
@@ -421,10 +413,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/flutter/packages/flutter/lib/src/cupertino/button.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/flutter/packages/flutter/lib/src/painting/borders.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="277" column="15" selection-start-line="277" selection-start-column="15" selection-end-line="277" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/flutter/packages/flutter/lib/src/painting/circle_border.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/flutter/packages/flutter/lib/src/rendering/proxy_box.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1347">
+          <caret line="1120" column="8" selection-start-line="1120" selection-start-column="8" selection-end-line="1120" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+        <state relative-caret-position="250">
+          <caret line="164" column="5" selection-start-line="164" selection-start-column="5" selection-end-line="164" selection-end-column="5" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
