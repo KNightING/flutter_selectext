@@ -1,4 +1,4 @@
-library flutter_selectext;
+library selectable_text;
 
 export 'package:flutter_selectext/src/selectable_text.dart';
 export 'package:flutter_selectext/src/mark_text.dart';

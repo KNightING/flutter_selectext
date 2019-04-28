@@ -1,8 +1,8 @@
 name: flutter_selectext
-description: Selectable Text
+description: Selectable text widget and able to set custom selection control.
 version: 0.0.1
-author:
-homepage:
+author: KNightING <knighting.dev@gmail.com>
+homepage: https://github.com/KNightING/flutter_selectext
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
