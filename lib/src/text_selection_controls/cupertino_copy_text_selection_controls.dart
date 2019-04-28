@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_selectext/src/text_selection_controls/material_mark_text_selection_controls.dart';
 import 'package:flutter_selectext/src/selectable_text_selection_controls.dart';
 
 // Padding around the line at the edge of the text selection that has 0 width and
