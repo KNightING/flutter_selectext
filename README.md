@@ -39,7 +39,7 @@ import 'package:flutter_selectext/selectable_text.dart';
 
   you can custom controls and could refer to `MarkText` widget.
 
-### MarkText
+#### MarkText
 
 - use `string`
 
