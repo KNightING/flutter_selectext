@@ -1,3 +1,7 @@
+## [0.1.1] - 2019/04/28
+
+* try to fix error for dart pub.
+
 ## [0.1.0] - 2019/04/28
 
 * add demo image
