@@ -2,6 +2,8 @@
 
 Selectable text widget and able to set custom selection control.
 
+![image](./image/demo.gif)
+
 ## Getting Started
 
 ### Add dependencies
@@ -10,7 +12,7 @@ on `pubspec.yaml`
 
 ```
 dependencies:
-  flutter_selectext: ^0.0.4
+  flutter_selectext: ^0.1.0
 ```
 
 ### Import library
