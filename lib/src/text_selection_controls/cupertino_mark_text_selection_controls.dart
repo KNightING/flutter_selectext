@@ -166,11 +166,11 @@ CupertinoButton _buildToolbarColorButton(Color color, VoidCallback onPressed) {
       foregroundDecoration: ShapeDecoration(
         color: color,
         shape: CircleBorder(
-          side: BorderSide(color: Colors.grey, width: 3.0),
+          side: BorderSide(color: Colors.grey, width: 2.0),
         ),
       ),
-      height: _kToolbarHeight * .4,
-      width: _kToolbarHeight * .4,
+      height: 10,
+      width: 10,
     ),
     color: _kToolbarBackgroundColor,
     minSize: _kToolbarHeight,
