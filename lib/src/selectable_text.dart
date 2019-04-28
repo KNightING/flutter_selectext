@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart' as Gestures;
+import 'package:flutter/cupertino.dart' show CupertinoTheme, CupertinoColors;
+import 'package:flutter/material.dart'
+    show Theme, ThemeData, Feedback, debugCheckHasMaterial;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_selectext/src/text_selection_controls/cupertino_copy_text_selection_controls.dart';
 import 'package:flutter_selectext/src/input_less_focus_node.dart';
@@ -20,7 +20,7 @@ class SelectableText extends StatelessWidget {
       this.cursorColor,
       this.androidTextSelectionControls,
       this.iosTextSelectionControls,
-      this.dragStartBehavior = DragStartBehavior.down,
+      this.dragStartBehavior = Gestures.DragStartBehavior.down,
       this.enableInteractiveSelection = true,
       this.onTap,
       this.onPaintContent})
@@ -37,7 +37,7 @@ class SelectableText extends StatelessWidget {
       this.cursorColor,
       this.androidTextSelectionControls,
       this.iosTextSelectionControls,
-      this.dragStartBehavior = DragStartBehavior.down,
+      this.dragStartBehavior = Gestures.DragStartBehavior.down,
       this.enableInteractiveSelection = true,
       this.onTap,
       this.onPaintContent})
@@ -56,7 +56,7 @@ class SelectableText extends StatelessWidget {
   final Radius cursorRadius;
   final Color cursorColor;
   final bool enableInteractiveSelection;
-  final DragStartBehavior dragStartBehavior;
+  final Gestures.DragStartBehavior dragStartBehavior;
   final GestureTapCallback onTap;
   final PaintContentHandler onPaintContent;
 
@@ -75,11 +75,11 @@ class SelectableText extends StatelessWidget {
     _renderEditable.selection = value;
   }
 
-  void _handleTapDown(TapDownDetails details) {
+  void _handleTapDown(Gestures.TapDownDetails details) {
     _renderEditable.handleTapDown(details);
   }
 
-  void _handleSingleTapUp(TapUpDetails details) {
+  void _handleSingleTapUp(Gestures.TapUpDetails details) {
     _effectiveFocusNode.unfocus();
     if (onTap != null) {
       onTap();
@@ -87,7 +87,7 @@ class SelectableText extends StatelessWidget {
   }
 
   void _handleSingleLongTapStart(
-      BuildContext context, GestureLongPressDragStartDetails details) {
+      BuildContext context, Gestures.GestureLongPressDragStartDetails details) {
     // the EditableText widget will force the keyboard to come up if our focus node
     // is already focused. It does this by using a TextInputConnection
     // In order to tool it not to do that, we override our focus while selecting text
@@ -112,7 +112,7 @@ class SelectableText extends StatelessWidget {
   }
 
   void _handleSingleLongTapMoveUpdate(
-      GestureLongPressDragUpdateDetails details) {
+      Gestures.GestureLongPressDragUpdateDetails details) {
     // the EditableText widget will force the keyboard to come up if our focus node
     // is already focused. It does this by using a TextInputConnection
     // In order to tool it not to do that, we override our focus while selecting text
@@ -128,11 +128,11 @@ class SelectableText extends StatelessWidget {
     _effectiveFocusNode.overrideFocus = null;
   }
 
-  void _handleSingleLongTapEnd(GestureLongPressDragUpDetails details) {
+  void _handleSingleLongTapEnd(Gestures.GestureLongPressDragUpDetails details) {
     _editableTextKey.currentState.showToolbar();
   }
 
-  void _handleDoubleTapDown(TapDownDetails details) {
+  void _handleDoubleTapDown(Gestures.TapDownDetails details) {
     _renderEditable.selectWord(cause: SelectionChangedCause.doubleTap);
     _editableTextKey.currentState.showToolbar();
   }
