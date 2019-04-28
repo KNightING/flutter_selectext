@@ -10,7 +10,7 @@ on `pubspec.yaml`
 
 ```
 dependencies:
-  flutter_selectext: ^0.0.2
+  flutter_selectext: ^0.0.4
 ```
 
 ### Import library

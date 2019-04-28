@@ -26,15 +26,7 @@ class SelectableTextDemo extends StatefulWidget {
 }
 
 class _SelectableTextDemoState extends State<SelectableTextDemo> {
-  int _counter = 0;
-
   List<TextSelection> markList = List();
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   void initState() {
@@ -104,11 +96,6 @@ class _SelectableTextDemoState extends State<SelectableTextDemo> {
                       text: 'button this many times:'),
                 ],
               ),
-            ),
-            SelectableText(
-              '$_counter',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.display1,
             ),
           ],
         ),

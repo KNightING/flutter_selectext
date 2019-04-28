@@ -1,3 +1,7 @@
+## [0.0.4] - 2019/04/28
+
+* try to fix error for dart pub.
+
 ## [0.0.3] - 2019/04/28
 
 * add flutter for environment on pubspec.yaml
