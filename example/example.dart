@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_selectext/selectable_text.dart';
 
 void main() {
   runApp(new DemoApp());
@@ -8,7 +9,7 @@ class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Selectable Test Demo',
+      title: 'Demo',
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
@@ -25,6 +26,15 @@ class SelectableTextDemo extends StatefulWidget {
 }
 
 class _SelectableTextDemoState extends State<SelectableTextDemo> {
+  int _counter = 0;
+
+  List<TextSelection> markList = List();
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
 
   @override
   void initState() {
@@ -43,10 +53,63 @@ class _SelectableTextDemoState extends State<SelectableTextDemo> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Text(
-              "Select any part of this text!",
-              textAlign: TextAlign.start,
-            )
+            MarkText.rich(
+              TextSpan(children: [
+                TextSpan(
+                    style: TextStyle(
+                        color: Colors.amber,
+                        fontSize: 30,
+                        wordSpacing: 3,
+                        shadows: [
+                          Shadow(
+                              color: Colors.black,
+                              offset: Offset(6, 3),
+                              blurRadius: 10)
+                        ]),
+                    text: 'This has mark option'),
+                TextSpan(
+                    style: TextStyle(
+                      color: Colors.deepPurple,
+                    ),
+                    text: ' test test test!!'),
+              ]),
+              handlerMark: (TextSelection selection) {
+                setState(() {
+                  markList.add(selection);
+                });
+              },
+              markColor: Colors.deepOrange,
+              markList: markList,
+            ),
+            SelectableText.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                      style: TextStyle(
+                        color: Colors.amber,
+                        fontSize: 30,
+                        wordSpacing: 3,
+                        shadows: [
+                          Shadow(
+                              color: Colors.black,
+                              offset: Offset(6, 3),
+                              blurRadius: 10),
+                        ],
+                      ),
+                      text: 'You have pushed the'),
+                  TextSpan(
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                      ),
+                      text: 'button this many times:'),
+                ],
+              ),
+            ),
+            SelectableText(
+              '$_counter',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.display1,
+            ),
           ],
         ),
       ),

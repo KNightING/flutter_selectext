@@ -10,7 +10,7 @@ import 'package:flutter_selectext/src/selectable_text_render_editable.dart';
 import 'package:flutter_selectext/src/selectable_text_selection_controls.dart';
 import 'package:flutter_selectext/src/text_selection_controls/material_copy_text_selection_controls.dart';
 
-class SelectableText extends Text {
+class SelectableText extends StatelessWidget {
   SelectableText(this.text,
       {Key key,
       this.style,
@@ -26,10 +26,7 @@ class SelectableText extends Text {
       this.onPaintContent})
       : assert(text != null),
         textSpan = null,
-        super.rich(
-          TextSpan(text: text),
-          key: key,
-        );
+        super(key: key);
 
   SelectableText.rich(this.textSpan,
       {Key key,
@@ -46,10 +43,7 @@ class SelectableText extends Text {
       this.onPaintContent})
       : assert(textSpan != null),
         text = null,
-        super.rich(
-          textSpan,
-          key: key,
-        );
+        super(key: key);
 
   final SelectableTextSelectionControls androidTextSelectionControls;
   final SelectableTextSelectionControls iosTextSelectionControls;
