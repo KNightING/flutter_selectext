@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 /// _TextSelectionDelegateHelper is used to ensure the Cut option in the toolbar
 /// doesn't show, and a Paste operation does nothing
 abstract class SelectableTextSelectionDelegate extends TextSelectionDelegate {
-
   int _overrideCollapsed = 0;
 
   TextEditingValue get textEditingValue {
@@ -14,8 +13,8 @@ abstract class SelectableTextSelectionDelegate extends TextSelectionDelegate {
     // to prevent that, short of copying all the code from cupertino/text_selection.dart
     if (_overrideCollapsed < 1) {
       _overrideCollapsed++;
-      return textEditingValue
-          .copyWith(selection: TextSelection.collapsed(offset: 0));
+      return textEditingValue.copyWith(
+          selection: TextSelection.collapsed(offset: 0));
     }
     return textEditingValue;
   }
@@ -23,14 +22,13 @@ abstract class SelectableTextSelectionDelegate extends TextSelectionDelegate {
   set textEditingValue(TextEditingValue value) {
     // because we can't disable the Paste toolbar option, let's make sure we don't
     // allow to actually paste data by always keeping the same text we had before
-   textEditingValue =
-        value.copyWith(text: textEditingValue.text);
+    textEditingValue = value.copyWith(text: textEditingValue.text);
   }
 
   /// 隱藏toolbar
 //  void hideToolbar();
 
-/// 顯示toolbar
-///
+  /// 顯示toolbar
+  ///
 //  void bringIntoView(TextPosition position);
 }

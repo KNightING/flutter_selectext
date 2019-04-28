@@ -419,7 +419,8 @@ class SelectableTextEditableText extends StatefulWidget {
   final PaintContentHandler onPaintContent;
 
   @override
-  SelectableTextEditableTextState createState() => SelectableTextEditableTextState();
+  SelectableTextEditableTextState createState() =>
+      SelectableTextEditableTextState();
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -1180,6 +1181,4 @@ class SelectableTextEditableTextState extends State<SelectableTextEditableText>
     }
     return TextSpan(style: widget.style, text: text);
   }
-
 }
-

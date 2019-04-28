@@ -18,8 +18,10 @@ const Offset _kFloatingCaretSizeIncrease = Offset(0.5, 1.0);
 // The corner radius of the floating cursor in pixels.
 const double _kFloatingCaretRadius = 1.0;
 
-typedef SelectableTextSelectionChangedHandler = void Function(TextSelection selection,
-    SelectableTextRender renderObject, SelectionChangedCause cause);
+typedef SelectableTextSelectionChangedHandler = void Function(
+    TextSelection selection,
+    SelectableTextRender renderObject,
+    SelectionChangedCause cause);
 
 typedef PaintContentHandler = void Function(
     TextPainter textPainter, Canvas canvas);

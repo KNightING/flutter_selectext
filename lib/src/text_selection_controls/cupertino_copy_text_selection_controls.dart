@@ -216,8 +216,8 @@ class _TextSelectionHandlePainter extends CustomPainter {
       origin != oldPainter.origin;
 }
 
-class CupertinoCopyTextSelectionControls extends SelectableTextSelectionControls {
-
+class CupertinoCopyTextSelectionControls
+    extends SelectableTextSelectionControls {
   @override
   Size handleSize = _kSelectionOffset; // Used for drag selection offset.
 
@@ -236,7 +236,8 @@ class CupertinoCopyTextSelectionControls extends SelectableTextSelectionControls
             position,
           ),
           child: _TextSelectionToolbar(
-            handleCopy: isTextSelection(delegate) ? () => handleCopy(delegate) : null,
+            handleCopy:
+                isTextSelection(delegate) ? () => handleCopy(delegate) : null,
           ),
         ));
   }
@@ -289,4 +290,5 @@ class CupertinoCopyTextSelectionControls extends SelectableTextSelectionControls
 }
 
 /// Text selection controls that follows iOS design conventions.
-final CupertinoCopyTextSelectionControls cupertinoCopyTextSelectionControls = CupertinoCopyTextSelectionControls();
+final CupertinoCopyTextSelectionControls cupertinoCopyTextSelectionControls =
+    CupertinoCopyTextSelectionControls();

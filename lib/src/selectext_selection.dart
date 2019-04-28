@@ -27,13 +27,15 @@ class SelectableTextSelectionOverlay {
     this.selectionControls,
     this.selectionDelegate,
     this.dragStartBehavior = DragStartBehavior.down,
-  }) : assert(value != null),
+  })  : assert(value != null),
         assert(context != null),
         _value = value {
     final OverlayState overlay = Overlay.of(context);
     assert(overlay != null);
-    _handleController = AnimationController(duration: _fadeDuration, vsync: overlay);
-    _toolbarController = AnimationController(duration: _fadeDuration, vsync: overlay);
+    _handleController =
+        AnimationController(duration: _fadeDuration, vsync: overlay);
+    _toolbarController =
+        AnimationController(duration: _fadeDuration, vsync: overlay);
   }
 
   /// The context in which the selection handles should appear.
@@ -101,8 +103,12 @@ class SelectableTextSelectionOverlay {
   void showHandles() {
     assert(_handles == null);
     _handles = <OverlayEntry>[
-      OverlayEntry(builder: (BuildContext context) => _buildHandle(context, _TextSelectionHandlePosition.start)),
-      OverlayEntry(builder: (BuildContext context) => _buildHandle(context, _TextSelectionHandlePosition.end)),
+      OverlayEntry(
+          builder: (BuildContext context) =>
+              _buildHandle(context, _TextSelectionHandlePosition.start)),
+      OverlayEntry(
+          builder: (BuildContext context) =>
+              _buildHandle(context, _TextSelectionHandlePosition.end)),
     ];
     Overlay.of(context, debugRequiredFor: debugRequiredFor).insertAll(_handles);
     _handleController.forward(from: 0.0);
@@ -126,10 +132,10 @@ class SelectableTextSelectionOverlay {
   /// that if you do call this during a build, the UI will not update until the
   /// next frame (i.e. many milliseconds later).
   void update(TextEditingValue newValue) {
-    if (_value == newValue)
-      return;
+    if (_value == newValue) return;
     _value = newValue;
-    if (SchedulerBinding.instance.schedulerPhase == SchedulerPhase.persistentCallbacks) {
+    if (SchedulerBinding.instance.schedulerPhase ==
+        SchedulerPhase.persistentCallbacks) {
       SchedulerBinding.instance.addPostFrameCallback(_markNeedsBuild);
     } else {
       _markNeedsBuild();
@@ -179,14 +185,18 @@ class SelectableTextSelectionOverlay {
     _toolbarController.dispose();
   }
 
-  Widget _buildHandle(BuildContext context, _TextSelectionHandlePosition position) {
-    if ((_selection.isCollapsed && position == _TextSelectionHandlePosition.end) ||
+  Widget _buildHandle(
+      BuildContext context, _TextSelectionHandlePosition position) {
+    if ((_selection.isCollapsed &&
+            position == _TextSelectionHandlePosition.end) ||
         selectionControls == null)
       return Container(); // hide the second handle when collapsed
     return FadeTransition(
         opacity: _handleOpacity,
         child: _SelectextSelectionHandleOverlay(
-          onSelectionHandleChanged: (TextSelection newSelection) { _handleSelectionHandleChanged(newSelection, position); },
+          onSelectionHandleChanged: (TextSelection newSelection) {
+            _handleSelectionHandleChanged(newSelection, position);
+          },
           onSelectionHandleTapped: _handleSelectionHandleTapped,
           layerLink: layerLink,
           renderObject: renderObject,
@@ -194,20 +204,19 @@ class SelectableTextSelectionOverlay {
           selectionControls: selectionControls,
           position: position,
           dragStartBehavior: dragStartBehavior,
-        )
-    );
+        ));
   }
 
   Widget _buildToolbar(BuildContext context) {
-    if (selectionControls == null)
-      return Container();
+    if (selectionControls == null) return Container();
 
     // Find the horizontal midpoint, just above the selected text.
-    final List<TextSelectionPoint> endpoints = renderObject.getEndpointsForSelection(_selection);
+    final List<TextSelectionPoint> endpoints =
+        renderObject.getEndpointsForSelection(_selection);
     final Offset midpoint = Offset(
-      (endpoints.length == 1) ?
-      endpoints[0].point.dx :
-      (endpoints[0].point.dx + endpoints[1].point.dx) / 2.0,
+      (endpoints.length == 1)
+          ? endpoints[0].point.dx
+          : (endpoints[0].point.dx + endpoints[1].point.dx) / 2.0,
       endpoints[0].point.dy - renderObject.preferredLineHeight,
     );
 
@@ -222,22 +231,25 @@ class SelectableTextSelectionOverlay {
         link: layerLink,
         showWhenUnlinked: false,
         offset: -editingRegion.topLeft,
-        child: selectionControls.buildToolbar(context, editingRegion, midpoint, selectionDelegate),
+        child: selectionControls.buildToolbar(
+            context, editingRegion, midpoint, selectionDelegate),
       ),
     );
   }
 
-  void _handleSelectionHandleChanged(TextSelection newSelection, _TextSelectionHandlePosition position) {
+  void _handleSelectionHandleChanged(
+      TextSelection newSelection, _TextSelectionHandlePosition position) {
     TextPosition textPosition;
     switch (position) {
       case _TextSelectionHandlePosition.start:
         textPosition = newSelection.base;
         break;
       case _TextSelectionHandlePosition.end:
-        textPosition =newSelection.extent;
+        textPosition = newSelection.extent;
         break;
     }
-    selectionDelegate.textEditingValue = _value.copyWith(selection: newSelection, composing: TextRange.empty);
+    selectionDelegate.textEditingValue =
+        _value.copyWith(selection: newSelection, composing: TextRange.empty);
     selectionDelegate.bringIntoView(textPosition);
   }
 
@@ -277,19 +289,23 @@ class _SelectextSelectionHandleOverlay extends StatefulWidget {
   final DragStartBehavior dragStartBehavior;
 
   @override
-  _SelectableTextSelectionHandleOverlayState createState() => _SelectableTextSelectionHandleOverlayState();
+  _SelectableTextSelectionHandleOverlayState createState() =>
+      _SelectableTextSelectionHandleOverlayState();
 }
 
-class _SelectableTextSelectionHandleOverlayState extends State<_SelectextSelectionHandleOverlay> {
+class _SelectableTextSelectionHandleOverlayState
+    extends State<_SelectextSelectionHandleOverlay> {
   Offset _dragPosition;
 
   void _handleDragStart(DragStartDetails details) {
-    _dragPosition = details.globalPosition + Offset(0.0, -widget.selectionControls.handleSize.height);
+    _dragPosition = details.globalPosition +
+        Offset(0.0, -widget.selectionControls.handleSize.height);
   }
 
   void _handleDragUpdate(DragUpdateDetails details) {
     _dragPosition += details.delta;
-    final TextPosition position = widget.renderObject.getPositionForPoint(_dragPosition);
+    final TextPosition position =
+        widget.renderObject.getPositionForPoint(_dragPosition);
 
     if (widget.selection.isCollapsed) {
       widget.onSelectionHandleChanged(TextSelection.fromPosition(position));
@@ -301,14 +317,12 @@ class _SelectableTextSelectionHandleOverlayState extends State<_SelectextSelecti
       case _TextSelectionHandlePosition.start:
         newSelection = TextSelection(
             baseOffset: position.offset,
-            extentOffset: widget.selection.extentOffset
-        );
+            extentOffset: widget.selection.extentOffset);
         break;
       case _TextSelectionHandlePosition.end:
         newSelection = TextSelection(
             baseOffset: widget.selection.baseOffset,
-            extentOffset: position.offset
-        );
+            extentOffset: position.offset);
         break;
     }
 
@@ -324,21 +338,24 @@ class _SelectableTextSelectionHandleOverlayState extends State<_SelectextSelecti
 
   @override
   Widget build(BuildContext context) {
-    final List<TextSelectionPoint> endpoints = widget.renderObject.getEndpointsForSelection(widget.selection);
+    final List<TextSelectionPoint> endpoints =
+        widget.renderObject.getEndpointsForSelection(widget.selection);
     Offset point;
     TextSelectionHandleType type;
 
     switch (widget.position) {
       case _TextSelectionHandlePosition.start:
         point = endpoints[0].point;
-        type = _chooseType(endpoints[0], TextSelectionHandleType.left, TextSelectionHandleType.right);
+        type = _chooseType(endpoints[0], TextSelectionHandleType.left,
+            TextSelectionHandleType.right);
         break;
       case _TextSelectionHandlePosition.end:
-      // [endpoints] will only contain 1 point for collapsed selections, in
-      // which case we shouldn't be building the [end] handle.
+        // [endpoints] will only contain 1 point for collapsed selections, in
+        // which case we shouldn't be building the [end] handle.
         assert(endpoints.length == 2);
         point = endpoints[1].point;
-        type = _chooseType(endpoints[1], TextSelectionHandleType.right, TextSelectionHandleType.left);
+        type = _chooseType(endpoints[1], TextSelectionHandleType.right,
+            TextSelectionHandleType.left);
         break;
     }
 
@@ -370,13 +387,9 @@ class _SelectableTextSelectionHandleOverlayState extends State<_SelectextSelecti
     );
   }
 
-  TextSelectionHandleType _chooseType(
-      TextSelectionPoint endpoint,
-      TextSelectionHandleType ltrType,
-      TextSelectionHandleType rtlType
-      ) {
-    if (widget.selection.isCollapsed)
-      return TextSelectionHandleType.collapsed;
+  TextSelectionHandleType _chooseType(TextSelectionPoint endpoint,
+      TextSelectionHandleType ltrType, TextSelectionHandleType rtlType) {
+    if (widget.selection.isCollapsed) return TextSelectionHandleType.collapsed;
 
     assert(endpoint.direction != null);
     switch (endpoint.direction) {

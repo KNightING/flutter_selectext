@@ -11,12 +11,14 @@ abstract class SelectableTextSelectionControls {
   ///
   /// The top left corner of this widget is positioned at the bottom of the
   /// selection position.
-  Widget buildHandle(BuildContext context, TextSelectionHandleType type, double textLineHeight);
+  Widget buildHandle(BuildContext context, TextSelectionHandleType type,
+      double textLineHeight);
 
   /// Builds a toolbar near a text selection.
   ///
   /// Typically displays buttons for copying and pasting text.
-  Widget buildToolbar(BuildContext context, Rect globalEditableRegion, Offset position, SelectableTextSelectionDelegate delegate);
+  Widget buildToolbar(BuildContext context, Rect globalEditableRegion,
+      Offset position, SelectableTextSelectionDelegate delegate);
 
   /// Returns the size of the selection handle.
   Size get handleSize;
@@ -33,7 +35,7 @@ abstract class SelectableTextSelectionControls {
 //    return !delegate.textEditingValue.selection.isCollapsed;
 //  }
 
-  bool isTextSelection(SelectableTextSelectionDelegate delegate){
+  bool isTextSelection(SelectableTextSelectionDelegate delegate) {
     return !delegate.textEditingValue.selection.isCollapsed;
   }
 
@@ -65,7 +67,8 @@ abstract class SelectableTextSelectionControls {
   /// Subclasses can use this to decide if they should expose the select all
   /// functionality to the user.
   bool canSelectAll(SelectableTextSelectionDelegate delegate) {
-    return delegate.textEditingValue.text.isNotEmpty && delegate.textEditingValue.selection.isCollapsed;
+    return delegate.textEditingValue.text.isNotEmpty &&
+        delegate.textEditingValue.selection.isCollapsed;
   }
 
   /// Copy the current selection of the text field managed by the given
@@ -121,16 +124,16 @@ abstract class SelectableTextSelectionControls {
   /// implemented.
   // TODO(ianh): https://github.com/flutter/flutter/issues/11427
   Future<void> handlePaste(SelectableTextSelectionDelegate delegate) async {
-    final TextEditingValue value = delegate.textEditingValue; // Snapshot the input before using `await`.
+    final TextEditingValue value =
+        delegate.textEditingValue; // Snapshot the input before using `await`.
     final ClipboardData data = await Clipboard.getData(Clipboard.kTextPlain);
     if (data != null) {
       delegate.textEditingValue = TextEditingValue(
-        text: value.selection.textBefore(value.text)
-            + data.text
-            + value.selection.textAfter(value.text),
+        text: value.selection.textBefore(value.text) +
+            data.text +
+            value.selection.textAfter(value.text),
         selection: TextSelection.collapsed(
-            offset: value.selection.start + data.text.length
-        ),
+            offset: value.selection.start + data.text.length),
       );
     }
     delegate.bringIntoView(delegate.textEditingValue.selection.extent);
@@ -148,9 +151,7 @@ abstract class SelectableTextSelectionControls {
     delegate.textEditingValue = TextEditingValue(
       text: delegate.textEditingValue.text,
       selection: TextSelection(
-          baseOffset: 0,
-          extentOffset: delegate.textEditingValue.text.length
-      ),
+          baseOffset: 0, extentOffset: delegate.textEditingValue.text.length),
     );
     delegate.bringIntoView(delegate.textEditingValue.selection.extent);
   }
