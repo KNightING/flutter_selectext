@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23731009-1c21-4107-aede-ae3f721dd7bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/example.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/example.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/selectable_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_selectext.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -16,23 +18,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-873">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+            <state relative-caret-position="198">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="172" column="15" selection-start-line="172" selection-start-column="15" selection-end-line="172" selection-end-column="15" />
+            <state relative-caret-position="336">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/flutter_selectext.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="7" column="101" selection-start-line="7" selection-start-column="101" selection-end-line="7" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -109,13 +120,13 @@
         <option value="$PROJECT_DIR$/lib/flutter_selectable_text.dart" />
         <option value="$PROJECT_DIR$/lib/flutter_selectext.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/lib/selectable_text.dart" />
         <option value="$PROJECT_DIR$/example/example.dart" />
         <option value="$PROJECT_DIR$/lib/src/selectable_text.dart" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_copy_text_selection_controls.dart" />
         <option value="$PROJECT_DIR$/lib/src/text_selection_controls/material_mark_text_selection_controls.dart" />
         <option value="$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart" />
+        <option value="$PROJECT_DIR$/lib/selectable_text.dart" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -222,7 +233,7 @@
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32027027" />
-      <window_info anchor="bottom" id="Dart Analysis" weight="0.3298969" />
+      <window_info anchor="bottom" id="Dart Analysis" weight="0.32896653" />
       <window_info anchor="bottom" id="Version Control" weight="0.32896653" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Run" weight="0.32896653" />
@@ -247,7 +258,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/selectable_text.dart">
+    <entry file="file://$PROJECT_DIR$/lib/flutter_selectext.dart">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/test/flutter_selectext_test.dart">
@@ -322,16 +333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/selectable_text.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="8" selection-end-column="23" />
-          <folding>
-            <element signature="e#28#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/selectable_text_selection_delegate.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-245" />
@@ -362,13 +363,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-873">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://D:/flutter/packages/flutter/lib/src/rendering/proxy_box.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -434,11 +428,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/text_selection_controls/cupertino_mark_text_selection_controls.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="172" column="15" selection-start-line="172" selection-start-column="15" selection-end-line="172" selection-end-column="15" />
+        <state relative-caret-position="336">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_selectext.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="7" column="101" selection-start-line="7" selection-start-column="101" selection-end-line="7" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -16,7 +16,7 @@ dependencies:
 ### Import library
 
 ```
-import 'package:flutter_selectext/selectable_text.dart';
+import 'package:flutter_selectext/flutter_selectext.dart';
 ```
 
 ### Usage
