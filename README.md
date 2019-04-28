@@ -4,32 +4,32 @@ Selectable text widget and able to set custom selection control.
 
 ## Getting Started
 
-#### Add dependencies
+### Add dependencies
 
 on `pubspec.yaml`
 
-<pre>
+```
 dependencies:
   flutter_selectext: 0.0.1
-</pre>
+```
 
-#### Import library
+### Import library
 
-<pre>
+```
 import 'package:flutter_selectext/selectable_text.dart';
-</pre>
+```
 
-#### Usage
+### Usage
 
-`SelectableText`
+### `SelectableText`
 
-- `SelectableText` use `string`
+- use `string`
 
   ```
    SelectableText('your string');
   ```
 
-- `SelectableText` use `textspan`
+- use `textspan`
 
   ```
    SelectableText.rich(textspan);
@@ -39,9 +39,9 @@ import 'package:flutter_selectext/selectable_text.dart';
 
   you can custom controls and could refer to `MarkText` widget.
 
-`MarkText`
+### `MarkText`
 
-- `MarkText` use `string`
+- use `string`
 
   ```
     List<TextSelection> markList = List();
@@ -58,7 +58,7 @@ import 'package:flutter_selectext/selectable_text.dart';
       markList: markList);
   ```
 
-- `MarkText` use `textspan`
+- use `textspan`
 
   ```
     List<TextSelection> markList = List();
