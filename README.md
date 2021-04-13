@@ -1,5 +1,15 @@
 # flutter_selectext
 
+## Deprecated!
+recommend use official widget [SelectableText](https://api.flutter.dev/flutter/material/SelectableText-class.html)
+
+this widget name same as official widget
+if you want to use, can try import package with `alias`
+```
+ import 'package:flutter_selectext/flutter_selectext.dart' as alias;
+```
+---
+
 Selectable text widget and able to set custom selection control.
 
 ![image](./image/demo.gif)
